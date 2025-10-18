@@ -1,4 +1,7 @@
-const API_URL = 'http://localhost:5000/api';
+// Use Railway backend in production, localhost in development
+const API_BASE_URL = import.meta.env.PROD 
+  ? 'https://freshjuice-production.up.railway.app/api'
+  : 'http://localhost:5000/api';
 
 // API request helper
 const apiRequest = async (endpoint, options = {}) => {
